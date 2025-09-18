@@ -1,0 +1,109 @@
+/* Container centers everything */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fb;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Card */
+.login-card {
+  background: #fff;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header section */
+.login-header {
+  background: #5e2ced;
+  padding: 50px 20px 20px 20px;
+  text-align: right;
+  position: relative;
+}
+
+.login-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Form styling */
+.login-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Button */
+.login-btn {
+  background: #5e2ced;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #4b21c4;
+}
+
+/* Error text */
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* Forgot password link */
+.forgot-password {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #777;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  color: #5e2ced;
+}

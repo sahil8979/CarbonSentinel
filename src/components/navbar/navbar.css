@@ -1,0 +1,98 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-bottom: 1px solid rgba(13, 26, 46, 0.06);
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--primary);
+}
+
+.top-right-icons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+}
+
+.top-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.top-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  background: var(--card);
+  border: 1px solid rgba(13, 26, 46, 0.06);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(13, 26, 46, 0.1);
+  min-width: 140px;
+  padding: 6px 0;
+  z-index: 100;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background: #f6f8fc;
+}

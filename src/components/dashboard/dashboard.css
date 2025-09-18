@@ -1,0 +1,384 @@
+:root {
+  --bg: #f6f8fc;
+  --primary: #1d2b53;
+  --muted: #6f7b95;
+  --card: #ffffff;
+  --accent: #646cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.dashboard {
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--primary);
+}
+
+/* ---- Removed .topbar and .topbar-inner (moved to navbar.css) ---- */
+
+.main-wrap {
+  padding-top: 88px; /* space for navbar */
+  display: flex;
+  justify-content: center;
+}
+
+.page-inner {
+  width: 1180px;
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 18px;
+}
+
+.left-col {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.right-col {
+  width: 300px;
+  flex: 0 0 300px;
+  margin-top: 6.1rem;
+}
+
+.page-title {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Search Bar */
+.search-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid rgba(13, 26, 46, 0.06);
+  padding: 8px 12px;
+  border-radius: 22px;
+  width: 620px;
+  margin-bottom: 20px;
+}
+.search-input:focus {
+  outline: none; /* remove the rectangle outline */
+  box-shadow: none; /* also ensure no glow */
+}
+
+.search-img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.search-input {
+  border: none;
+  font-size: 14px;
+  color: rgba(75, 90, 122, 0.2);
+
+  width: 100%;
+  padding-left: 36px;
+  background: transparent;
+}
+
+/* Table Card */
+.table-card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(13, 26, 46, 0.04);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-wrap {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 0;
+}
+
+.batch-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+.batch-table thead {
+  background: #f4f7fb;
+}
+
+.batch-table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: #6f7b95;
+  font-weight: 600;
+}
+
+.batch-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(13, 26, 46, 0.04);
+  font-size: 14px;
+  color: #27324a;
+}
+
+.col-number {
+  width: 72px;
+  color: #6f7b95;
+  font-weight: 600;
+}
+
+.details-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Pagination */
+.card-footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end; /* bottom-right alignment */
+  align-items: center;
+  color: #1814f3;
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.pagination button {
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1814f3;
+  font-weight: 700; /* bold text */
+}
+
+.page-num {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  color: #1814f3;
+}
+
+.page-num.active {
+  background: #1814f3;
+  color: white;
+  box-shadow: 0 6px 14px rgba(100, 108, 255, 0.18);
+  font-weight: 700;
+}
+
+/* Add Card */
+.add-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(13, 26, 46, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-card-title {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.phase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.phase-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+  border: 1px solid rgba(13, 26, 46, 0.02);
+}
+
+.phase-row:hover {
+  transform: translateY(-4px);
+  background: #fbfdff;
+}
+
+.phase-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.phase-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.bg-yellow {
+  background: #fff7df;
+}
+
+.bg-blue {
+  background: #ecf4ff;
+}
+
+.bg-pink {
+  background: #ffeaf0;
+}
+
+.phase-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.phase-title {
+  font-weight: 700;
+  color: #28335a;
+  font-size: 14px;
+}
+
+.phase-sub {
+  font-size: 12px;
+  color: #6f7b95;
+  margin-top: 4px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 12, 22, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  width: 360px;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 40px rgba(13, 26, 46, 0.15);
+}
+
+.modal h3 {
+  margin: 0 0 10px;
+  color: var(--primary);
+}
+
+.modal-row {
+  margin: 8px 0;
+  color: #34435f;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.close-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* Google Sheets Card */
+.sheets-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 14px;
+  box-shadow: 0 6px 20px rgba(13, 26, 46, 0.04);
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.sheets-card:hover {
+  transform: translateY(-3px);
+  background: #fbfdff;
+}
+
+.sheets-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+.sheets-list li {
+  margin-bottom: 8px;
+}
+.sheets-list a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+.sheets-list a:hover {
+  text-decoration: underline;
+}
+.modal.large {
+  width: 500px; /* wider modal for links */
+}
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .page-inner {
+    width: calc(100% - 40px);
+  }
+  .right-col {
+    display: none;
+  }
+}
