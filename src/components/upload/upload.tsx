@@ -16,27 +16,32 @@ const Upload: React.FC = () => {
   // Define dropdown options based on selected phase
   const getFileTypeOptions = () => {
     if (selectedPhaseFromQuery === "Phase 1") {
-      return ["Raw Material_CSV"];
+      return ["Raw Material CSV", "Inbound Logistics CSV", "On-Site Handling CSV"];
     } else if (selectedPhaseFromQuery === "Phase 2") {
-      return ["Inbound Logistics_CSV"];
+      return [
+        "Solid Material Inputs CSV",
+        "Gaseous & Liquid Fuel Inputs CSV",
+        "Electrical Energy Consumption CSV",
+      ];
     } else if (selectedPhaseFromQuery === "Phase 3") {
-      return ["Outbound Logistics_CSV"];
+      return [
+        "Finishing Energy CSV",
+        "Outbound Logistics CSV",
+        "Material Yield Loss CSV",
+      ];
     }
     // default fallback
     return [
-      "Raw Material_CSV",
-      "Inbound Logistics_CSV",
-      "On-Site Handling_CSV",
-      "Outbound Logistics_CSV",
+      "Raw Material CSV",
+      "Inbound Logistics CSV",
+      "On-Site Handling CSV",
+      "Outbound Logistics CSV",
     ];
   };
 
-  // Auto-select if only one option
+  // Reset file type whenever phase changes
   useEffect(() => {
-    const options = getFileTypeOptions();
-    if (options.length === 1) {
-      setFileType(options[0]);
-    }
+    setFileType("");
   }, [selectedPhaseFromQuery]);
 
   const handleUpload = () => {
@@ -81,7 +86,6 @@ const Upload: React.FC = () => {
             className="upload-select"
             value={fileType}
             onChange={(e) => setFileType(e.target.value)}
-            disabled={getFileTypeOptions().length === 1} // disable if auto-selected
           >
             <option value="">Select File Type</option>
             {getFileTypeOptions().map((option) => (
