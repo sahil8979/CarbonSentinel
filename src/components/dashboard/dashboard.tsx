@@ -37,9 +37,9 @@ const Dashboard: React.FC = () => {
   const [showSheetsModal, setShowSheetsModal] = useState(false);
 
   const googleSheetsLinks = [
-    { name: "Phase 1 Sheet", link: "https://docs.google.com/spreadsheets/d/your-link-1" },
-    { name: "Phase 2 Sheet", link: "https://docs.google.com/spreadsheets/d/your-link-2" },
-    { name: "Phase 3 Sheet", link: "https://docs.google.com/spreadsheets/d/your-link-3" },
+    { name: "RAw Material CSV_1", link: "https://docs.google.com/spreadsheets/d/10fKIaG8B_8GZmhcslRcpyAIPLXWlxzN3ekSwXLFIw0c/edit?usp=sharing" },
+    { name: "Inbound Logistics CSV_2", link: "https://docs.google.com/spreadsheets/d/1G_6PP2J3371EzOrbCD-__NfonU6doS8v4pG74gzdas8/edit?usp=sharing" },
+    { name: "On-Site Handling CSV_3", link: "https://docs.google.com/spreadsheets/d/1weB1zX8GWjPqN2OiOurpfNHvg0FGxlGG-A3y2FLbz_A/edit?usp=sharing" },
   ];
 
   const filtered = useMemo(() => {

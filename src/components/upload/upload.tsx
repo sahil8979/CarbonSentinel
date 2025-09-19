@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./upload.css";
 
@@ -12,6 +12,32 @@ const Upload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const navigate = useNavigate();
+
+  // Define dropdown options based on selected phase
+  const getFileTypeOptions = () => {
+    if (selectedPhaseFromQuery === "Phase 1") {
+      return ["Raw Material_CSV"];
+    } else if (selectedPhaseFromQuery === "Phase 2") {
+      return ["Inbound Logistics_CSV"];
+    } else if (selectedPhaseFromQuery === "Phase 3") {
+      return ["Outbound Logistics_CSV"];
+    }
+    // default fallback
+    return [
+      "Raw Material_CSV",
+      "Inbound Logistics_CSV",
+      "On-Site Handling_CSV",
+      "Outbound Logistics_CSV",
+    ];
+  };
+
+  // Auto-select if only one option
+  useEffect(() => {
+    const options = getFileTypeOptions();
+    if (options.length === 1) {
+      setFileType(options[0]);
+    }
+  }, [selectedPhaseFromQuery]);
 
   const handleUpload = () => {
     if (!fileType) {
@@ -55,11 +81,14 @@ const Upload: React.FC = () => {
             className="upload-select"
             value={fileType}
             onChange={(e) => setFileType(e.target.value)}
+            disabled={getFileTypeOptions().length === 1} // disable if auto-selected
           >
             <option value="">Select File Type</option>
-            <option value="Raw Material_CSV">Raw Material_CSV</option>
-            <option value="Inbound Logistics_CSV">Inbound Logistics_CSV</option>
-            <option value="On-Site Handling_CSV">On-Site Handling_CSV</option>
+            {getFileTypeOptions().map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
           </select>
 
           {/* File upload */}
